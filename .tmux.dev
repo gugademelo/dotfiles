@@ -1,0 +1,39 @@
+rename-window rails
+
+selectp -t 0
+splitw -v -p 50
+selectp -t 1
+splitw -v -p 50
+selectp -t 0
+splitw -v -p 50
+
+selectp -t 3
+send-keys "cd ~/vagas/usuario_service" C-m
+send-keys "rails s -p 3004" C-m
+
+selectp -t 2
+send-keys "cd ~/vagas/dominios_service" C-m
+send-keys "rails s -p 3002" C-m
+
+selectp -t 1
+send-keys "cd ~/vagas/curriculo_legacy_service" C-m
+send-keys "rails s -p 3001" C-m
+
+selectp -t 0
+send-keys "cd ~/vagas/portinari" C-m
+send-keys "rails s" C-m
+
+new-window -n bauhaus
+selectp -t 0
+split -v -p 75
+
+selectp -t 0
+send-keys "cd ~/vagas/boilerplate-bauhaus" C-m
+send-keys "npm i" C-m
+
+selectp -t 1
+send-keys "cd ~/vagas/boilerplate-bauhaus" C-m
+send-keys "npm run dev" C-m
+
+new-window -n dev
+send-keys "cd ~/vagas/portinari" C-m
